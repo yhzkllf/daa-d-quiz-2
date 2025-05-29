@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijkstra's Algorithm Visualizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dijkstra's Algorithm Visualizer</h1>
+            <p>Interactive pathfinding visualization using Dijkstra's algorithm</p>
+        </header>
+
+        <div class="controls">
+            <div class="grid-controls">
+                <label for="rows">Rows:</label>
+                <input type="number" id="rows" min="5" max="50" value="20">
+                <label for="cols">Columns:</label>
+                <input type="number" id="cols" min="5" max="50" value="20">
+                <button id="generateMaze">Generate Maze</button>
+            </div>
+
+            <div class="path-controls">
+                <label for="start">Start Node:</label>
+                <input type="number" id="start" min="0">
+                <label for="end">End Node:</label>
+                <input type="number" id="end" min="0">
+                <button id="findPath">Find Path</button>
+            </div>
+        </div>
+
+        <div class="visualization">
+            <div class="maze-container">
+                <svg id="maze" width="800" height="600"></svg>
+            </div>
+            <div class="path-info">
+                <h3>Path Information</h3>
+                <p id="pathDetails">Click "Find Path" to see the shortest path</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
